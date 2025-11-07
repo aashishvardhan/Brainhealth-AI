@@ -23,7 +23,7 @@ import random
 import base64
 
 # ML/AI imports
-SKIP_TF = os.getenv('SKIP_TENSORFLOW', '0') == '1'
+SKIP_TF = os.getenv('SKIP_TENSORFLOW', '1') == '1'  # Default to SKIP for Render free tier
 
 if not SKIP_TF:
     try:
