@@ -169,26 +169,7 @@ export default function DetectionPage() {
             </p>
           </motion.div>
 
-          {/* Demo Mode Banner */}
-          {isDemoMode && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4 mb-8"
-            >
-              <div className="flex items-start space-x-3">
-                <AlertCircle className="w-5 h-5 text-yellow-600 dark:text-yellow-400 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-yellow-700 dark:text-yellow-300 font-medium text-sm">
-                    🧪 Demo Mode Active
-                  </p>
-                  <p className="text-yellow-600 dark:text-yellow-400 text-xs mt-1">
-                    Using simulated AI results. Deploy backend to Render.com for real stroke detection. See RENDER_DEPLOY.md
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          )}
+          {/* Demo Mode Banner - REMOVED */}
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
             {/* Upload Section */}
@@ -215,12 +196,25 @@ export default function DetectionPage() {
                   <label htmlFor="file-upload" className="cursor-pointer">
                     <Upload className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-lg font-medium text-gray-700 mb-2">
-                      Click to upload or drag and drop
+                      Upload Brain CT Scan (Grayscale only)
                     </p>
                     <p className="text-sm text-gray-500">
-                      MRI or CT scan images (JPG, PNG)
+                      Supported formats: JPG, PNG
                     </p>
                   </label>
+                </div>
+
+                {/* Grayscale Disclaimer */}
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-blue-900 font-medium text-sm mb-1">Important Notice</p>
+                      <p className="text-blue-700 text-xs leading-relaxed">
+                        This model only supports <strong>grayscale CT brain scans</strong>. Colored or MRI scans are not supported and may produce inaccurate results.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Preview */}
@@ -316,15 +310,9 @@ export default function DetectionPage() {
                           )}
                         </div>
                         <div className="flex-1">
-                          <h3 className={`text-2xl font-bold mb-2 ${result.stroke_detected ? 'text-red-900' : 'text-green-900'}`}>
+                          <h3 className={`text-2xl font-bold mb-3 ${result.stroke_detected ? 'text-red-900' : 'text-green-900'}`}>
                             {result.prediction}
                           </h3>
-                          <div className="flex items-center space-x-2 mb-3">
-                            <TrendingUp className="w-5 h-5 text-gray-600" />
-                            <span className="text-lg font-semibold">
-                              Confidence: {result.confidence}%
-                            </span>
-                          </div>
                           {result.stroke_type && (
                             <div className="mb-3">
                               <span className="text-sm text-gray-600">Classification: </span>

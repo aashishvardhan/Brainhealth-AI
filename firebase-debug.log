@@ -1,0 +1,28 @@
+[debug] [2025-11-07T16:27:40.080Z] ----------------------------------------------------------------------
+[debug] [2025-11-07T16:27:40.084Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aashi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js hosting:disable
+[debug] [2025-11-07T16:27:40.084Z] CLI Version:   14.24.0
+[debug] [2025-11-07T16:27:40.084Z] Platform:      win32
+[debug] [2025-11-07T16:27:40.084Z] Node Version:  v24.11.0
+[debug] [2025-11-07T16:27:40.085Z] Time:          Fri Nov 07 2025 21:57:40 GMT+0530 (India Standard Time)
+[debug] [2025-11-07T16:27:40.085Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-07T16:27:40.324Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-07T16:27:40.324Z] > authorizing via signed-in user (aashishvardhand27@gmail.com)
+[debug] [2025-11-07T16:27:40.324Z] [iam] checking project brainhealth-ai for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-11-07T16:27:40.326Z] Checked if tokens are valid: false, expires at: 1762516962407
+[debug] [2025-11-07T16:27:40.326Z] Checked if tokens are valid: false, expires at: 1762516962407
+[debug] [2025-11-07T16:27:40.327Z] > refreshing access token with scopes: []
+[debug] [2025-11-07T16:27:40.333Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-11-07T16:27:40.333Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-07T16:27:40.598Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-11-07T16:27:40.599Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-07T16:27:40.612Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/brainhealth-ai:testIamPermissions [none]
+[debug] [2025-11-07T16:27:40.612Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/brainhealth-ai:testIamPermissions x-goog-quota-user=projects/brainhealth-ai
+[debug] [2025-11-07T16:27:40.612Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/brainhealth-ai:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-07T16:27:42.019Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/brainhealth-ai:testIamPermissions 200
+[debug] [2025-11-07T16:27:42.019Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/brainhealth-ai:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-07T16:27:42.020Z] Checked if tokens are valid: true, expires at: 1762536459599
+[debug] [2025-11-07T16:27:42.020Z] Checked if tokens are valid: true, expires at: 1762536459599
+[debug] [2025-11-07T16:27:42.020Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/brainhealth-ai [none]
+[debug] [2025-11-07T16:27:42.713Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/brainhealth-ai 200
+[debug] [2025-11-07T16:27:42.714Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/brainhealth-ai {"projectId":"brainhealth-ai","projectNumber":"418497685983","displayName":"BrainHealth AI","name":"projects/brainhealth-ai","resources":{"hostingSite":"brainhealth-ai"},"state":"ACTIVE","etag":"1_0d6dc1c3-4bf2-4938-b168-da0089e12b3b"}

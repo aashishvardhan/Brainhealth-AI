@@ -9,9 +9,8 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Detection', href: '/detection' },
   { name: 'Analytics', href: '/analytics' },
-  { name: 'Chatbot', href: '/chatbot' },
+  { name: 'AI Helpdesk', href: '/helpdesk' },
   { name: 'Learn', href: '/learn' },
-  { name: 'Tools', href: '/tools' },
   { name: 'About', href: '/about' },
 ]
 
@@ -50,19 +49,6 @@ export default function Navbar() {
                 </motion.div>
               </Link>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Link href="/detection">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary"
-              >
-                Start Detection
-              </motion.button>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}

@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { Brain, Sparkles, TrendingUp, Shield, Heart, Zap } from 'lucide-react'
 import Hero from '@/components/home/Hero'
 import Features from '@/components/home/Features'
-import Stats from '@/components/home/Stats'
 import WellnessTip from '@/components/home/WellnessTip'
 
 export default function Home() {
@@ -16,9 +15,6 @@ export default function Home() {
 
       {/* Features Section */}
       <Features />
-
-      {/* Stats Section */}
-      <Stats />
 
       {/* Wellness Tip Section */}
       <WellnessTip />
@@ -109,18 +105,18 @@ export default function Home() {
             {[
               {
                 icon: Shield,
-                title: '99.2% Accuracy',
-                description: 'State-of-the-art CNN model trained on thousands of medical images'
+                title: 'Advanced AI Technology',
+                description: 'CNN model trained on medical imaging data for accurate analysis'
               },
               {
                 icon: Zap,
-                title: 'Instant Results',
-                description: 'Get analysis results in seconds, not days'
+                title: 'Instant Analysis',
+                description: 'Get AI-powered analysis results in seconds'
               },
               {
                 icon: Heart,
-                title: 'Free & Accessible',
-                description: 'Healthcare should be accessible to everyone, everywhere'
+                title: 'Educational Platform',
+                description: 'Learn about stroke prevention and early detection'
               }
             ].map((item, index) => (
               <motion.div
