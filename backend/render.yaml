@@ -3,7 +3,7 @@ services:
     name: brainhealth-backend
     runtime: python
     plan: free
-    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements-lite.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1
     healthCheckPath: /health
     envVars:
@@ -11,5 +11,5 @@ services:
         value: 3.10.0
       - key: SKIP_TENSORFLOW
         value: "0"
-    # Increase timeout for TensorFlow loading
+    # Using requirements-lite.txt for memory optimization
     autoDeploy: true
