@@ -1,0 +1,21 @@
+# Exclude training data and large files from deployment
+training_data/
+*.png
+*.jpg
+*.jpeg
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+reports/
+.env
+.venv
+venv/
+ENV/
+.git/

@@ -19,8 +19,9 @@ COPY . .
 # Create models directory
 RUN mkdir -p models
 
-# Expose port
-EXPOSE 8000
+# Expose port (Cloud Run uses PORT env variable)
+ENV PORT=8080
+EXPOSE 8080
 
-# Start server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start server (Cloud Run requires listening on $PORT)
+CMD uvicorn main:app --host 0.0.0.0 --port $PORT
