@@ -1,12 +1,15 @@
 services:
   - type: web
-    name: brainhealth-api
+    name: brainhealth-backend
     runtime: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.10.0
       - key: SKIP_TENSORFLOW
         value: "0"
+    # Increase timeout for TensorFlow loading
+    autoDeploy: true
