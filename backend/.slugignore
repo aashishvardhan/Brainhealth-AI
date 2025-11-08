@@ -1,0 +1,19 @@
+# Exclude from Render deployment to save space and memory
+training_data/
+models/
+reports/
+__pycache__/
+venv/
+*.pyc
+train_*.py
+create_smart_model.py
+Dockerfile
+railway.json
+nixpacks.toml
+Procfile
+start-railway.sh
+requirements.txt
+requirements-lite.txt
+requirements-railway.txt
+.git/
+.gitignore

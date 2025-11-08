@@ -171,11 +171,11 @@ async def startup_event():
 
 # ==================== Helper Functions ====================
 
-def preprocess_image(image: Image.Image, target_size=(224, 224)):
+def preprocess_image(image: Image.Image, target_size=(128, 128)):
     """Preprocess image for CNN model"""
-    # Convert to RGB if needed
-    if image.mode != 'RGB':
-        image = image.convert('RGB')
+    # Convert to grayscale for stroke detection (model trained on grayscale)
+    if image.mode != 'L':
+        image = image.convert('L')
     
     # Resize
     image = image.resize(target_size)
@@ -183,8 +183,9 @@ def preprocess_image(image: Image.Image, target_size=(224, 224)):
     # Convert to array and normalize
     img_array = np.array(image) / 255.0
     
-    # Add batch dimension
-    img_array = np.expand_dims(img_array, axis=0)
+    # Add batch dimension and channel dimension (grayscale = 1 channel)
+    img_array = np.expand_dims(img_array, axis=0)  # Add batch
+    img_array = np.expand_dims(img_array, axis=-1)  # Add channel
     
     return img_array
 
